@@ -49,6 +49,7 @@ public class AccountController {
 		Account account = accountRepository.getAccount(id.toString());
 		Resource<Account> resource = new Resource<Account>(account);
 		resource.add(linkTo(methodOn(AccountController.class).all()).withRel("accounts"));
+		resource.add(linkTo(methodOn(AccountController.class).findAccountHolderById(account.getAccountId(), account.getAccountHolder().getUserId())).withRel("accountHolder"));
 		logger.info("accounts byId() found: " + account);
 		return resource;
 	}

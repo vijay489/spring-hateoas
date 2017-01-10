@@ -55,4 +55,5 @@ public class Account implements Serializable{
 		return "Account [accountId=" + accountId + ", accountHolder=" + accountHolder + ", amount=" + amount
 				+ ", ifscCode=" + ifscCode + "]";
 	}
+	
 }
